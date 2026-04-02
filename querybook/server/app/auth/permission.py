@@ -35,7 +35,7 @@ def verify_every_environment_permission(environment_ids: List[int]):
     If the user does not have access to every one of the provided environment ids,
     the function will abort the request with a 403 error.
     """
-    verify_api_access_token_environment_permission(environment_ids)
+    verify_safe_environment_access(environment_ids)
     if len(environment_ids) == 0:
         abort_404("Requested resource is not available within accessible environment")
 
